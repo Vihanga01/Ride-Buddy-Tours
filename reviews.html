@@ -1,1 +1,63 @@
-# User reviews page from googlr business profile
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Reviews — Ride Buddy Tours</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav-row">
+				<a class="logo" href="index.html">Ride Buddy Tours</a>
+				<nav class="main-nav">
+					<a href="index.html">Home</a>
+					<a href="reviews.html">Reviews</a>
+					<a href="contact.html">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="container section">
+				<div class="section-header">
+					<h2>Google Reviews</h2>
+					<p class="muted">Below are reviews from our Google Business Profile. Add your own review using the button.</p>
+				</div>
+
+				<div class="section-content">
+					<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+						<div>
+							<strong>Business Google Place ID:</strong>
+							<span id="placeIdDisplay" class="muted">(replace with your Place ID)</span>
+						</div>
+						<div>
+							<!-- Link opens Google write-review window for the place -->
+							<a id="writeReviewBtn" class="btn primary" href="#" target="_blank">Write a review on Google</a>
+						</div>
+					</div>
+
+					<div id="reviewsList" class="reviews-list">
+						<!-- Reviews will populate here -->
+					</div>
+
+					<p id="reviewsNotice" class="muted" style="margin-top:12px"></p>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-row">
+				<div>© <span id="year"></span> Ride Buddy Tours</div>
+				<div class="footer-links">
+					<a href="contact.html">Contact</a>
+					<a href="reviews.html">Reviews</a>
+				</div>
+			</div>
+		</footer>
+
+		<!-- IMPORTANT: replace PLACE_ID and API_KEY in js/reviews.js with your values -->
+		<script src="js/reviews.js"></script>
+	</body>
+</html>

@@ -85,3 +85,9 @@ body{background:linear-gradient(180deg,#f7f9fb,#ffffff)}
 @media(max-width:900px){
   .two-col{grid-template-columns:1fr}
 }
+
+/* Reviews list */
+.reviews-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.reviews-list .testimonial{background:#fff;padding:16px;border-radius:12px;border:1px solid rgba(11,18,32,0.04);box-shadow:0 8px 24px rgba(9,15,20,0.03)}
+.reviews-list .testimonial p{margin:0 0 10px}
+.reviews-list .testimonial cite{font-weight:700;color:var(--muted)}
