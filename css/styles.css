@@ -1,0 +1,87 @@
+/* Core layout and visual styles for Ride Buddy Tours homepage */
+:root{
+  --bg:#0f1724;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#ff6b3d;
+  --accent-2:#ff8a5b;
+  --container:1100px;
+  --radius:12px;
+  --glass: rgba(255,255,255,0.06);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:#0b1220}
+body{background:linear-gradient(180deg,#f7f9fb,#ffffff)}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.nav-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font-weight:800;color:var(--bg);text-decoration:none;font-size:1.2rem}
+.site-header{background:transparent;position:sticky;top:0;z-index:40}
+.main-nav{display:flex;gap:18px;align-items:center}
+.main-nav a{color:var(--bg);text-decoration:none;font-weight:600}
+.btn{background:#111827;color:#fff;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.small{padding:6px 10px;font-size:0.9rem}
+.btn.ghost{background:transparent;color:var(--bg);border:1px solid rgba(11,18,32,0.06)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 8px 24px rgba(255,107,61,0.18)}
+.menu-toggle{display:none;background:transparent;border:0;font-size:1.4rem}
+
+/* HERO */
+.hero{position:relative;padding:80px 0;border-radius:0 0 28px 28px;overflow:hidden;background-image:linear-gradient(120deg,rgba(255,139,90,0.06),rgba(0,0,0,0.02)), url('../assets/images/hero.jpg');background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,36,0.18),rgba(255,255,255,0.02))}
+.hero-content{position:relative;z-index:2;color:#08102a;padding:36px 0;max-width:900px}
+.hero h1{font-size:2.25rem;margin:0 0 12px;line-height:1.05}
+.lead{color:var(--muted);margin-bottom:18px}
+.hero-search{display:flex;gap:10px;align-items:center;margin-bottom:18px}
+.hero-search input, .hero-search select{flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(11,18,32,0.06)}
+.hero-ctas{display:flex;gap:12px;margin-top:8px}
+
+/* SECTION */
+.section{padding:56px 0}
+.section-header h2{margin:0 0 6px;font-size:1.5rem}
+.section-header p{color:var(--muted);margin:0}
+.grid{display:grid;gap:18px}
+.cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:start}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(9,15,20,0.04);transition:transform .22s}
+.card:hover{transform:translateY(-6px)}
+.card img{width:100%;height:160px;object-fit:cover;display:block}
+.card-body{padding:14px}
+.card-body h3{margin:0 0 8px;font-size:1.05rem}
+.muted{color:var(--muted);font-size:0.95rem}
+.card-meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+.price{font-weight:700;color:var(--accent)}
+
+.bg-light{background:#fbfdff;border-top:1px solid rgba(11,18,32,0.03)}
+.two-col{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+.features{padding-left:18px;color:var(--muted)}
+.showcase img{width:100%;border-radius:12px;box-shadow:0 12px 40px rgba(9,15,20,0.06)}
+
+.testimonials{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.testimonial{background:linear-gradient(180deg,#ffffff,#fbfbfd);padding:18px;border-radius:12px;border:1px solid rgba(11,18,32,0.04)}
+.testimonial cite{display:block;margin-top:10px;font-style:normal;color:var(--muted);font-weight:600}
+
+.site-footer{padding:18px 0;background:#fff;border-top:1px solid rgba(11,18,32,0.04)}
+.footer-row{display:flex;justify-content:space-between;align-items:center}
+.footer-links a{margin-left:16px;color:var(--muted);text-decoration:none}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero h1{font-size:1.6rem}
+  .two-col{grid-template-columns:1fr}
+  .menu-toggle{display:block}
+  .main-nav{display:none;position:absolute;right:20px;top:66px;background:#fff;padding:14px;border-radius:10px;box-shadow:0 12px 40px rgba(9,15,20,0.06)}
+}
+
+@media(max-width:560px){
+  .hero{padding:56px 0}
+  .card img{height:140px}
+}
+
+/* Contact form styles */
+.contact-form{display:flex;flex-direction:column;gap:12px;max-width:640px}
+.contact-form label{display:flex;flex-direction:column;font-weight:600;color:var(--bg)}
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea{padding:12px;border-radius:10px;border:1px solid rgba(11,18,32,0.06);font-size:1rem}
+.contact-form textarea{resize:vertical}
+.contact-form .muted{margin:0}
+
+@media(max-width:900px){
+  .two-col{grid-template-columns:1fr}
+}

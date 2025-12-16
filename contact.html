@@ -1,1 +1,80 @@
-# Appointment form
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Contact — Ride Buddy Tours</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav-row">
+				<a class="logo" href="index.html">Ride Buddy Tours</a>
+				<nav class="main-nav">
+					<a href="index.html">Home</a>
+					<a href="reviews.html">Reviews</a>
+					<a href="contact.html">Contact</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="container section">
+				<div class="section-header">
+					<h2>Contact Us</h2>
+					<p class="muted">Send us a message and we'll get back to you. You can also reach us on WhatsApp.</p>
+				</div>
+
+				<div class="two-col">
+					  <form id="contactForm" class="contact-form" action="send_mail.php" method="POST">
+						<label>Name
+							<input type="text" name="name" required>
+						</label>
+
+						<label>Email
+							<input type="email" name="email" required>
+						</label>
+
+						<label>Phone
+							<input type="tel" name="phone">
+						</label>
+
+						<label>Message
+							<textarea name="message" rows="6" required></textarea>
+						</label>
+
+						<input type="hidden" name="_subject" value="New contact from Ride Buddy Tours">
+						<input type="hidden" name="_replyto" value="">
+
+						<div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+							<button class="btn primary" type="submit">Send Message</button>
+							<div class="muted">or message on WhatsApp: <a href="https://wa.me/0766747398" target="_blank">0766747398</a></div>
+						</div>
+
+						<p id="formNotice" class="muted" style="margin-top:12px"></p>
+					</form>
+
+					<div>
+						<h3>Quick Contact</h3>
+						<p>Email: <a href="mailto:ridebuddytours@gmail.com">ridebuddytours@gmail.com</a></p>
+						<p>WhatsApp: <a href="https://wa.me/0766747398" target="_blank">0766747398</a></p>
+						<p class="muted">After you replace the Formspree endpoint with your form ID or connect a backend, submissions will be emailed to <strong>ridebuddytours@gmail.com</strong>.</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-row">
+				<div>© <span id="year"></span> Ride Buddy Tours</div>
+				<div class="footer-links">
+					<a href="contact.html">Contact</a>
+					<a href="reviews.html">Reviews</a>
+				</div>
+			</div>
+		</footer>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>

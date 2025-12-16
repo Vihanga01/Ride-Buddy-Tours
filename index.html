@@ -1,1 +1,139 @@
-# Homepage
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Ride Buddy Tours — Discover Your Next Adventure</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav-row">
+				<a class="logo" href="index.html">Ride Buddy Tours</a>
+				<nav class="main-nav" id="mainNav">
+					<a href="index.html">Home</a>
+					<a href="reviews.html">Reviews</a>
+					<a href="contact.html">Contact</a>
+					<button class="btn small" id="addTourBtn">Add Tour</button>
+				</nav>
+				<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="hero-overlay"></div>
+				<div class="container hero-content">
+					<h1>Explore curated tour packages for every kind of traveler</h1>
+					<p class="lead">Day trips, multi-day adventures, and custom experiences — find them all with Ride Buddy.</p>
+					<form class="hero-search" action="#" onsubmit="return false;">
+						<input type="text" placeholder="Search tours, destinations or tags" id="searchInput">
+						<select id="durationSelect">
+							<option value="">Any duration</option>
+							<option value="day">Day trip</option>
+							<option value="multi">Multi-day</option>
+						</select>
+						<button class="btn" id="searchBtn">Search</button>
+					</form>
+					<div class="hero-ctas">
+						<a class="btn primary" href="#featured">View Featured</a>
+						<a class="btn ghost" href="contact.html">Request Custom Trip</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="container section" id="featured">
+				<div class="section-header">
+					<h2>Featured Tours</h2>
+					<p>Hand-picked packages with top reviews and great value.</p>
+				</div>
+				<div class="grid cards">
+					<article class="card">
+						<img src="assets/images/tour1.jpg" alt="Coastal Explorer">
+						<div class="card-body">
+							<h3>Coastal Explorer — 2 Days</h3>
+							<p class="muted">Scenic drives, seaside meals, and easy hikes.</p>
+							<div class="card-meta">
+								<span class="price">$199</span>
+								<a class="btn small" href="#">View</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card">
+						<img src="assets/images/tour2.jpg" alt="Mountain Retreat">
+						<div class="card-body">
+							<h3>Mountain Retreat — 4 Days</h3>
+							<p class="muted">Guided trails, cozy stays, and local cuisine.</p>
+							<div class="card-meta">
+								<span class="price">$549</span>
+								<a class="btn small" href="#">View</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card">
+						<img src="assets/images/tour3.jpg" alt="City Highlights">
+						<div class="card-body">
+							<h3>City Highlights — 1 Day</h3>
+							<p class="muted">Local guides, cultural stops, and hidden gems.</p>
+							<div class="card-meta">
+								<span class="price">$89</span>
+								<a class="btn small" href="#">View</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="container section bg-light">
+				<div class="two-col">
+					<div>
+						<h2>Create & Manage Tours</h2>
+						<p>Add your own packages so travelers can discover them quickly. Use the "Add Tour" button to start.</p>
+						<ul class="features">
+							<li>Easy listing with photos</li>
+							<li>Flexible pricing & schedules</li>
+							<li>Built-in reviews and messaging</li>
+						</ul>
+						<a class="btn" href="contact.html">Get Listed</a>
+					</div>
+					<div class="showcase">
+						<img src="assets/images/showcase.jpg" alt="Showcase" />
+					</div>
+				</div>
+			</section>
+
+			<section class="container section">
+				<div class="section-header">
+					<h2>What travelers say</h2>
+				</div>
+				<div class="testimonials grid">
+					<blockquote class="testimonial">
+						<p>"The Ride Buddy Coastal trip was the highlight of our year — excellent guides and food!"</p>
+						<cite>— Priya K.</cite>
+					</blockquote>
+					<blockquote class="testimonial">
+						<p>"Easy booking and a memorable itinerary. Highly recommend."</p>
+						<cite>— Marco R.</cite>
+					</blockquote>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container footer-row">
+				<div>© <span id="year"></span> Ride Buddy Tours</div>
+				<div class="footer-links">
+					<a href="contact.html">Contact</a>
+					<a href="reviews.html">Reviews</a>
+				</div>
+			</div>
+		</footer>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
