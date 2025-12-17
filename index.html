@@ -58,7 +58,7 @@
 							<p class="muted">Scenic drives, seaside meals, and easy hikes.</p>
 							<div class="card-meta">
 								<span class="price">$199</span>
-								<a class="btn small" href="#">View</a>
+								<button class="btn small book-btn" data-tour-id="1" data-tour-name="Coastal Explorer — 2 Days" data-tour-price="199">View</button>
 							</div>
 						</div>
 					</article>
@@ -70,7 +70,7 @@
 							<p class="muted">Guided trails, cozy stays, and local cuisine.</p>
 							<div class="card-meta">
 								<span class="price">$549</span>
-								<a class="btn small" href="#">View</a>
+								<button class="btn small book-btn" data-tour-id="2" data-tour-name="Mountain Retreat — 4 Days" data-tour-price="549">View</button>
 							</div>
 						</div>
 					</article>
@@ -82,12 +82,63 @@
 							<p class="muted">Local guides, cultural stops, and hidden gems.</p>
 							<div class="card-meta">
 								<span class="price">$89</span>
-								<a class="btn small" href="#">View</a>
+								<button class="btn small book-btn" data-tour-id="3" data-tour-name="City Highlights — 1 Day" data-tour-price="89">View</button>
 							</div>
 						</div>
 					</article>
 				</div>
 			</section>
+
+			<!-- Booking Modal Popup -->
+			<div id="bookingModal" class="modal">
+				<div class="modal-overlay" id="modalOverlay"></div>
+				<div class="modal-content">
+					<button class="modal-close" id="modalClose">×</button>
+					<h2 id="modalTourName">Tour Booking</h2>
+					<p class="tour-price-display">Price: <span id="modalTourPrice">$0</span></p>
+					
+					<form id="bookingForm" action="send_mail.php" method="POST">
+						<input type="hidden" id="tourId" name="tour_id">
+						<input type="hidden" id="tourName" name="tour_name">
+						<input type="hidden" id="tourPrice" name="tour_price">
+						
+						<div class="form-group">
+							<label for="customerName">Full Name *</label>
+							<input type="text" id="customerName" name="customer_name" required>
+						</div>
+
+						<div class="form-group">
+							<label for="customerEmail">Email *</label>
+							<input type="email" id="customerEmail" name="customer_email" required>
+						</div>
+
+						<div class="form-group">
+							<label for="customerPhone">Phone Number *</label>
+							<input type="tel" id="customerPhone" name="customer_phone" required>
+						</div>
+
+						<div class="form-group">
+							<label for="participants">Number of Participants *</label>
+							<input type="number" id="participants" name="participants" min="1" required>
+						</div>
+
+						<div class="form-group">
+							<label for="preferredDate">Preferred Start Date *</label>
+							<input type="date" id="preferredDate" name="preferred_date" required>
+						</div>
+
+						<div class="form-group">
+							<label for="specialRequests">Special Requests or Notes</label>
+							<textarea id="specialRequests" name="special_requests" rows="3" placeholder="Any dietary restrictions, accessibility needs, or other preferences..."></textarea>
+						</div>
+
+						<div class="form-actions">
+							<button type="button" class="btn ghost" id="cancelBtn">Cancel</button>
+							<button type="submit" class="btn primary">Confirm Booking</button>
+						</div>
+					</form>
+				</div>
+			</div>
 
 			<section class="container section bg-light">
 				<div class="two-col">
