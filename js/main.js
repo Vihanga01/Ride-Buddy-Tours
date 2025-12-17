@@ -30,6 +30,68 @@
     });
   }
 
+  // BOOKING MODAL POPUP
+  const bookingModal = document.getElementById('bookingModal');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalClose = document.getElementById('modalClose');
+  const cancelBtn = document.getElementById('cancelBtn');
+  const bookingForm = document.getElementById('bookingForm');
+  const bookBtns = document.querySelectorAll('.book-btn');
+  
+  const openModal = (tourId, tourName, tourPrice) => {
+    document.getElementById('tourId').value = tourId;
+    document.getElementById('tourName').value = tourName;
+    document.getElementById('tourPrice').value = tourPrice;
+    document.getElementById('modalTourName').textContent = tourName;
+    document.getElementById('modalTourPrice').textContent = '$' + tourPrice;
+    bookingForm.reset();
+    bookingModal.classList.add('active');
+  };
+
+  const closeModal = () => {
+    bookingModal.classList.remove('active');
+  };
+
+  bookBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const tourId = btn.dataset.tourId;
+      const tourName = btn.dataset.tourName;
+      const tourPrice = btn.dataset.tourPrice;
+      openModal(tourId, tourName, tourPrice);
+    });
+  });
+
+  modalClose.addEventListener('click', closeModal);
+  cancelBtn.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
+
+  // Handle booking form submission
+  bookingForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(bookingForm);
+    
+    try {
+      const res = await fetch(bookingForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if(res.ok){
+        alert('Booking inquiry sent! The tour guide will contact you soon.');
+        closeModal();
+        bookingForm.reset();
+      } else {
+        alert('Failed to send booking. Please try again.');
+      }
+    } catch(err){
+      alert('Network error. Please try again.');
+    }
+  });
+
   // Contact form submit (works with Formspree or any POST endpoint)
   const contactForm = document.getElementById('contactForm');
   if(contactForm){
